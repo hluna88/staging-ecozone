@@ -1,0 +1,42 @@
+// M I X I N S • M O D U L E
+
+// Viewport width/height
+
+@mixin vw-unit($_value, $_breakpoint) {
+
+    font-size: get-vw($_value, $_breakpoint);
+
+    @include breakpoint(screen $_breakpoint) {
+
+        font-size: $_value;
+    }
+}
+
+@mixin background-set($_srcset) {
+    background-size: cover !important;
+
+    @if map-has-key($_srcset, 'original') {
+        background: image-url(map-get($_srcset, 'original')) no-repeat center center;
+    }
+
+
+    @each $_src, $_set in $_srcset {
+
+        @media screen and (max-width: $_src) {
+            background: image-url($_set) no-repeat center center;
+        }
+    }
+}
+
+@mixin transition-animation($_properties: (background, color), $_duration: 0.2s, $_timing: ease-out) {
+
+    @if length($_properties) > 1 {
+        transition-property: $_properties;
+        transition-duration: $_duration;
+        transition-timing-function: $_timing;
+
+    } @else {
+        transition: $_properties $_duration $_timing;
+    }
+}
+

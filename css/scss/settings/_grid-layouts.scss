@@ -1,0 +1,18 @@
+// G R I D • L A Y O U T S
+
+$max-width: 1200px;
+$side-padding: 20px;
+
+#header,
+#footer,
+.stripe {
+    width: 100%;
+
+    .container {
+        position: relative;
+        max-width: $max-width + ($side-padding * 2);
+        padding: 0 $side-padding;
+        margin: 0 auto;
+    }
+}
+

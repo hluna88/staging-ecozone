@@ -1,0 +1,25 @@
+// --------------------------------------------
+// M A I N • S C S S • F I L E ----------------
+// --------------------------------------------
+
+@import 'breakpoint';
+@import url('https://fonts.googleapis.com/css?family=Aldrich|Asap:700|Martel+Sans|Metamorphous|Nixie+One|Rajdhani:700|Righteous|Rubik:500|Squada+One|Teko:700|Viga');
+
+@import 'site-firm';
+
+@import 'vendor/animated-modal',
+        'vendor/normalize',
+        'vendor/special-fonts',
+        'vendor/slick',
+        'vendor/magnific-popup',
+        'vendor/slick',
+        'vendor/slick-slider-theme';
+        // 'vendor/lightgallery',
+        // 'vendor/bootstrap-grid',
+
+
+
+@import 'settings',
+        'modules';
+
+

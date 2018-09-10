@@ -1,0 +1,22 @@
+// P R O J E C T S • S T R I P E
+
+#servicios {
+    padding-top: 50px;
+
+    h3 {
+        margin-bottom: 1em;
+    }
+
+    .slider-item .box {
+        text-align: center;
+        margin: 0 10px;
+
+        img {
+            margin: 0 auto;
+        }
+
+        &:hover {
+            box-shadow: 0 0 4px 2px rgba(#000000, 0.05);
+        }
+    }
+}

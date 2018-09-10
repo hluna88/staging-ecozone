@@ -1,0 +1,34 @@
+// B O X E S
+
+$txt-color: #202020;
+$bg-color: #f7f7f7;
+$border-color: #e9e9e9;
+$border-radius: 3px;
+$padding: 1rem;
+
+$dark-txt-color: #ffffff;
+$dark-bg-color: darken($bg-color, 80);
+$dark-border-color: darken($border-color, 70);
+
+.box {
+    background-color: $bg-color;
+    padding: $padding;
+    border: 1px solid $border-color;
+    border-radius: $border-radius;
+    color: $txt-color;
+
+    &.dark {
+        background-color: $dark-bg-color;
+        border-color: $dark-border-color;
+        color: $dark-txt-color;
+    }
+
+    &.white {
+        background-color: #ffffff;
+    }
+
+    &.borderless {
+        border: 0;
+    }
+}
+

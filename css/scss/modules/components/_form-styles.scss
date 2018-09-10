@@ -1,0 +1,57 @@
+// F O R M S • S T Y L E S
+
+form,
+.form {
+    display: block;
+}
+
+.input,
+.textarea {
+    position: relative;
+
+    label {
+        display: block;
+        margin-bottom: 5px;
+    }
+}
+
+input[type='text'],
+input[type='email'],
+input[type='tel'] {
+    padding: 6px 10px;
+    border: 0;
+    background-color: #ffffff;
+    color: #202020;
+    outline: none !important;
+
+    &::placeholder {
+        color: #909090;
+    }
+
+    &:focus {
+        outline: none;
+    }
+
+}
+
+textarea {
+    padding: 8px 10px;
+    border: 0;
+    background-color: #ffffff;
+    color: #202020;
+    outline: none;
+    resize: none;
+
+    &::placeholder {
+        color: #909090;
+    }
+
+    &:focus {
+        outline: none;
+    }
+}
+input[type='send'],
+button {
+    cursor: pointer;
+    outline: none !important;
+}

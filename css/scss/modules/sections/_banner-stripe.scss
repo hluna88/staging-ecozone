@@ -1,0 +1,65 @@
+// B A N N E R • S T R I P E
+$h-alignment: center;
+$v-alignment: center;
+$text-color: #ffffff;
+$text-font: $font-1;
+$font-size: 40px;
+$font-breakpoint: $level-2;
+
+
+.banner-stripe {
+    display: flex;
+    flex-direction: row;
+    justify-content: $h-alignment;
+    align-items: $v-alignment;
+    padding-top: 90px;
+    padding-right: 20px;
+    padding-bottom: 90px;
+    padding-left: 20px;
+
+    .text-wrapper {
+        @include vw-unit($font-size, $font-breakpoint);
+
+        color: $text-color;
+        font-family: $text-font;
+        text-align: center;
+    }
+
+    &.no-text {
+        display: none;
+
+        + .stripe {
+            border-top: 2px solid #eaeaea;
+        }
+
+        @include breakpoint(screen $level-2) {
+
+            display: flex;
+
+            + .stripe {
+                border-top: 0;
+            }
+        }
+    }
+
+}
+
+$banners-number: 1;
+$resizing-breakpoint: $level-2;
+
+@for $x from 1 through $banners-number {
+
+    #banner-stripe-#{$x} {
+        background: image-url('banner-stripe/#{$x}.jpg') no-repeat center center;
+        background-size: cover;
+
+        &.no-text {
+            height: get-vw(image-height('banner-stripe/#{$x}.jpg'), $resizing-breakpoint);
+
+            @include breakpoint(screen $resizing-breakpoint) {
+
+                height: image-height('banner-stripe/#{$x}.jpg');
+            }
+        }
+    }
+}

@@ -1,0 +1,140 @@
+// C O N T A C T • S T R I P E
+$input-bg: #ffffff;
+$input-border: #eaeaea;
+$input-color: #303030;
+$input-border-focus: $link-color-1;
+
+#contacto {
+    background-color: $bg-secondary;
+    border-top: 1px solid #e0e0e0;
+
+    .layout-wrapper {
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas:
+            "form"
+            "map";
+        grid-row-gap: 20px;
+        max-width: $level-3;
+        margin: 0 auto;
+    }
+
+    .map-container {
+        grid-area: map;
+        background-color: #ededed;
+    }
+
+    #map,
+    #map iframe {
+        width: 100% !important;
+        height: 100% !important;
+    }
+
+    .result {
+        margin-top: 1em;
+        font-family: $font-2;
+        font-size: rems(14px);
+        text-align: center;
+        font-style: italic;
+        text-transform: uppercase;
+        height: 31px;
+    }
+
+    #short-form {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, 45px) 110px 1fr;
+        grid-template-areas:
+            "name"
+            "email"
+            "phone"
+            "textarea"
+            "button";
+        grid-row-gap: 10px;
+        grid-area: form;
+        margin: 0 auto;
+
+        label {
+            display: none;
+        }
+
+        input,
+        textarea {
+            display: block;
+            width: 100%;
+            height: 100%;
+            border: 1px solid $input-border;
+            border-radius: 4px;
+            background-color: $input-bg;
+            color: $input-color;
+
+            &::placeholder {
+                color: lighten($input-color, 12);
+            }
+
+            &:focus {
+                border-color: $input-border-focus;
+            }
+
+            &.input_wrong {
+                background-color: rgba(#b31212, 0.15);
+                border-color: rgba(#b31212, 0.4);
+            }
+        }
+
+        textarea {
+            min-height: 100px;
+        }
+
+        .name {
+            grid-area: name;
+        }
+
+        .email {
+            grid-area: email;
+        }
+
+        .phone {
+            grid-area: phone;
+        }
+
+        .textarea {
+            grid-area: textarea;
+        }
+
+        .btn-container {
+            grid-area: button;
+        }
+
+        // @include breakpoint(screen $level-2) {
+
+        //     grid-template-columns: repeat(2, 1fr);
+        //     grid-template-rows: repeat(3, 45px) 1fr;
+        //     grid-template-areas:
+        //         "name textarea"
+        //         "email textarea"
+        //         "phone textarea"
+        //         "button button";
+        //     grid-column-gap: 15px;
+        //     max-width: 720px;
+        // }
+    }
+
+    @include breakpoint(screen $level-2) {
+
+        .layout-wrapper {
+            grid-template-rows: 1fr;
+            grid-template-columns: 1fr 1fr;
+            grid-template-areas:
+                "map form";
+            grid-column-gap: 25px;
+        }
+    }
+
+    @include breakpoint(screen $level-4) {
+
+        .layout-wrapper {
+            grid-template-columns: 1fr 400px;
+        }
+    }
+}

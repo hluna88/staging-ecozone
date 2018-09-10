@@ -1,0 +1,12 @@
+// F U N C T I O N S
+
+@function get-vw($target, $base) {
+    $vw-context: ($base * 0.01) * 1;
+    @return ($target / $vw-context) * 1vw;
+}
+
+@function rems($val, $base: 16px) {
+
+    @return ($val / $base) * 1rem;
+}
+

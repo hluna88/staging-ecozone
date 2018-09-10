@@ -1,0 +1,74 @@
+// S T R I P E • S T Y L E S
+
+.stripe {
+    padding-top: 80px;
+
+    h1,
+    h2 {
+        @include vw-unit(50px, $level-2);
+
+        color: $text-main;
+        font-family: $font-1;
+        text-align: center;
+    }
+
+    h3 {
+        @include vw-unit(30px, $level-2);
+
+        color: $text-main;
+        font-family: $font-1;
+        text-align: center;
+    }
+
+    .subheading {
+        @include vw-unit(24px, $level-2);
+
+        display: block;
+        // opacity: 0.7;
+        margin-bottom: 2.4em;
+        font-family: $font-1;
+        text-align: center;
+    }
+
+    h2 {
+        margin-bottom: 1em;
+    }
+
+}
+
+// S P E C I F I C • S T Y L E S
+
+#inicio {
+    background-color: #ffffff;
+    border-bottom: 2px solid #ebebeb;
+
+    h1 {
+        margin-bottom: 1em;
+        text-align: left;
+    }
+
+    .subheading {
+        margin-bottom: 3em;
+    }
+
+    .bodytext {
+        max-width: 980px;
+        margin: 0 auto;
+        line-height: 1.4;
+    }
+
+    @include breakpoint(screen $level-2) {
+
+        // .cols-wrapper {
+        //     display: grid;
+        //     max-width: 800px;
+        //     margin: 0 auto;
+        //     grid-gap: 100px;
+        //     grid-template-columns: 1fr 1fr;
+        // }
+
+        .btn-container {
+            text-align: left;
+        }
+    }
+}

@@ -1,0 +1,93 @@
+//  H E R O • B A N N E R
+
+$bp-small: 680px;
+$bp-half: 920px;
+$bp-full: 1200px;
+$hero-text-color: #ffffff;
+$height: 600px;
+
+#cover {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    height: 100vh;
+    // background-color: darken(blue, 40);
+    background: image-url('hero-banner/xsmall.jpg') no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
+
+    .hero-text {
+        position: relative;
+        color: $hero-text-color;
+    }
+
+    .subheading {
+        @include vw-unit(45px, $level-2);
+
+        margin-bottom: 0.4em;
+        font-family: $font-1;
+        font-weight: bold;
+        text-transform: uppercase;
+        text-shadow: 1px 1px 2px #000000;
+    }
+
+    // @include breakpoint(screen (orientation landscape), screen (max-width $level-2)) {
+    // @media screen and(orientation: landscape) and(max-width: $level-3) and (max-height: 520px) {
+
+    //     .hero-text {
+    //         display: grid;
+    //         grid-template-columns: 50% 50%;
+    //         grid-template-rows: 2fr 1fr;
+    //         grid-template-areas:
+    //             "logo subheading"
+    //             "logo button";
+    //         grid-column-gap: 5px;
+    //         grid-row-gap: 5px;
+
+    //         .main-logo {
+    //             text-align: center;
+    //             grid-area: logo;
+    //             max-width: 280px;
+    //         }
+
+    //         .subheading {
+    //             grid-area: subheading;
+    //             margin: auto;
+    //         }
+
+    //         .btn-container {
+    //             grid-area: button;
+    //             margin: 1rem 0 0;
+    //         }
+    //     }
+    // }
+
+    @include breakpoint(screen $bp-small) {
+
+        background: image-url('hero-banner/small.jpg') no-repeat center center;
+        background-size: cover;
+        background-attachment: fixed;
+    }
+
+    @include breakpoint(screen $bp-half) {
+
+        height: $height;
+        background: image-url('hero-banner/half.jpg') no-repeat center center;
+        background-size: cover;
+        background-attachment: fixed;
+
+        &.full-screen {
+            height: 100vh;
+        }
+    }
+
+    @include breakpoint(screen $bp-full) {
+
+        background: image-url('hero-banner/full.jpg') no-repeat center center;
+        background-size: cover;
+        background-attachment: fixed;
+    }
+}

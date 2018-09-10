@@ -1,0 +1,121 @@
+// B U T T O N S
+
+$hover-hue: 'dark';
+
+button,
+input[type=button],
+.btn {
+    @include transition-animation(all, ease-in-out, 0.3s);
+    display: inline-block;
+    padding: 15px 20px;
+    border: 0;
+    border-radius: $btn-roundness;
+    background-color: $btn-bg-1;
+    color: $btn-color-1;
+    font-family: $font-2;
+    font-size: rems(14px);
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
+    line-height: 1.1;
+
+    &.big {
+        padding: 13px 24px;
+        font-size: rems(20px);
+    }
+
+    &.rounded {
+        border-radius: 30px;
+    }
+
+    &.ghost {
+        border: 2px solid $btn-bg-1;
+        background: transparent;
+        color: $btn-bg-1;
+    }
+
+    &.to-white {
+
+        box-shadow: 0 4px 6px -5px rgba(#000000, 0.7);
+
+        &:hover {
+            background-color: #ffffff;
+            color: $link-color-1;
+        }
+    }
+
+    &.secondary {
+        background-color: $btn-bg-2;
+        color: $btn-color-2;
+
+        &.ghost {
+            border-color: $btn-bg-2;
+            background-color: transparent;
+            color: $btn-bg-2;
+        }
+    }
+
+    &:hover {
+        text-decoration: none;
+    }
+
+    @if($hover-hue == 'light') {
+
+        &:hover {
+            border-color: lighten($btn-bg-1, 15);
+            background-color: lighten($btn-bg-1, 15);
+            color: $btn-color-1;
+        }
+
+        &.secondary {
+
+            &:hover {
+                background-color: lighten($btn-bg-2, 15);
+            }
+
+            &.ghost:hover {
+                border-color: lighten($btn-bg-2, 15);
+            }
+        }
+
+    }
+
+    @elseif($hover-hue == 'dark') {
+
+        &:hover {
+            background-color: darken($btn-bg-1, 10);
+            color: $btn-color-1;
+        }
+
+        &.secondary {
+
+            &:hover {
+                background-color: darken($btn-bg-2, 10);
+                color: $btn-color-2;
+            }
+
+            &.ghost:hover {
+                border-color: darken($btn-bg-2, 10);
+            }
+        }
+    }
+
+    @include breakpoint(screen (max-width ($level-2 - 1))) {
+        padding: 14px 22px;
+        margin: 0 auto;
+        border-radius: 4px;
+        font-weight: bold;
+        font-size: rems(17px);
+
+        &.rounded {
+            border-radius: 4px;
+        }
+    }
+}
+
+.btn-container {
+    display: block;
+    margin-top: 0.4rem;
+    margin-bottom: 0.6rem;
+    text-align: center;
+}

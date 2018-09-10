@@ -1,0 +1,47 @@
+// F A S T • C A L L • E L E M E N T
+$append-height: 60px;
+$vw-font-bp: 380px;
+$btn-color: $link-color-1;
+
+// .fast-call-activated .stripe,
+.fast-call-activated #footer {
+    padding-bottom: $append-height + 30px;
+}
+
+.fast-call {
+    display: block;
+    position: fixed;
+    bottom: 0;
+    z-index: 1000;
+    width: 100%;
+    height: $append-height;
+    background-color: #ffffff;
+    padding: 6px 25px;
+    box-shadow: 0 0 1px 1px rgba(#000000, 0.12);
+
+    &.hidden {
+        display: none;
+    }
+
+    .btn {
+        @include vw-unit(24px, $vw-font-bp);
+
+        display: block;
+        padding: 0 10px;
+        height: 100%;
+        background-color: $btn-color;
+        font-family: $font-1;
+        text-align: center;
+        line-height: $append-height - 12px;
+
+        i,
+        svg {
+            margin-right: 0.4em;
+        }
+    }
+
+    + #header {
+        top: $append-height;
+    }
+}
+
